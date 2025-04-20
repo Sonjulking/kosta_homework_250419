@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            body {
+                height: 80vh;
+                font-family: '궁서';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #3d4052;
+                color: red;
+            }
+
+            .wrap {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                border: 4px solid;
+                border-image: linear-gradient(90deg, yellow, red, green) 1;
+                padding: 10px 50px 30px;
+            }
+
+            .wrap input[type=text] {
+                color: white;
+                border: 4px solid;
+                border-image: linear-gradient(90deg, yellow, cyan, red) 1;
+                padding: 10px;
+                background: linear-gradient(to right, red, white);
+            }
+
+            .wrap input[type=submit] {
+                font-family: 궁서;
+                font-weight: bold;
+                font-size: 15px;
+                cursor: pointer;
+                color: red;
+                background-color: rgba(0, 0, 0, 0);
+                border: 4px solid;
+                border-radius: 10px;
+                border-image: linear-gradient(90deg, red, cyan, green) 1;
+                padding: 6px;
+            }
+
+            .wrap input[type=submit]:hover {
+                background-color: rgba(255, 0, 0, 0.5);
+                color: white;
+            }
+
+            .wrap input[type=text]::placeholder {
+                color: white;
+                text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <h2>도서검색 시스템</h2>
+            <form action="ex01_Book.jsp" method="post">
+                <input type="text" name="publisher" placeholder="출판사명을 입력하세요...">
+                <input type="submit" value="제출" onclick=" confirm('정말로, 진짜로 검색...하시겠습니까?');">
+            </form>
+        </div>
+        <script>
+
+        </script>
+    </body>
+</html>

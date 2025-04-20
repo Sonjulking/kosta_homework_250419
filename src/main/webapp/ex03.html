@@ -1,0 +1,69 @@
+<!--미래의 나에게 보내는 편지-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            body > div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h2>
+                미래의 나에게 보내는 편지
+            </h2>
+            <div>
+                <input type="text" id="word" placeholder="하고싶은말을 남겨줘!">
+                <button id="btnAdd">전송</button>
+            </div>
+            <div id="warning"></div>
+
+            <p id="result"></p>
+        </div>
+        <script>
+            let inputSentence; //입력한 문장
+            let inputWordArr = []; //입력한 문장을 담을 배열
+            const badWordArr = ["욕1", "욕2", "나쁜말"]; //나쁜말 등록
+            document.querySelector("#btnAdd").onclick = () => {
+                let isBadWord = false; //나쁜말을 헀나요
+                inputSentence = document.querySelector("#word").value; //입력한 문장
+                inputWordArr = inputSentence.split(" "); // 띄어쓰기 단위로 배열에 담아줌
+                const res = inputWordArr.map((word) => {
+                    if (badWordArr.includes(word)) { //나쁜말이 들어가있으면
+                        isBadWord = true;
+                        return "*".repeat(word.length); //*로 표시
+                    } else {//없으면 바로표시
+                        return word;
+                    }
+
+                });
+                setTimeout(() => {
+                    if (isBadWord) {
+                        document.querySelector("#warning").innerHTML = "<h2 style='color:red;'>나쁜말은 쓰면 안돼!</h2>";
+                    }
+                    document.querySelector("#result").innerHTML = res.join(" ");
+                }, 10000); //10초뒤
+            };
+
+            //엔터쳤을때도 입력
+            document.addEventListener("keypress", function (e) {
+                if (e.key === "Enter") {
+                    document.querySelector("#btnAdd").click();
+                }
+            });
+        </script>
+    </body>
+</html>
