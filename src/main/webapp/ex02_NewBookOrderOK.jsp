@@ -57,7 +57,7 @@
                 }
 
                 orderInsertPstmt = conn.prepareStatement(orderInsertSql);
-                orderInsertPstmt.setInt(1, maxOrderId + 1);
+                orderInsertPstmt.setInt(1, maxOrderId + 1); //최대 orderid값 + 1해줌
                 orderInsertPstmt.setInt(2, custid);
                 orderInsertPstmt.setInt(3, bookid);
                 orderInsertPstmt.setInt(4, (int) (bookPrice + (bookPrice * 0.1))); //책가격의 10%마진 설정
