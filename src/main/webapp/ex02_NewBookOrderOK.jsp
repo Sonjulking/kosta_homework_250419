@@ -7,6 +7,11 @@
 <html>
     <head>
         <title>Title</title>
+        <style>
+            h2 {
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <%
@@ -59,9 +64,9 @@
                 re = orderInsertPstmt.executeUpdate();
         %>
         <%if (re > 0) {%>
-        <h2>성공</h2>
+        <h2 style="color:green;">성공</h2>
         <%} else {%>
-        <h2>실패</h2>
+        <h2 style="color: red;">실패</h2>
         <%}%>
         <%
             } catch (Exception e) {

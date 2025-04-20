@@ -37,7 +37,7 @@
                 background-color: rgba(221, 160, 221, 0.5);
                 font-weight: bold;
                 color: #333333;
-                text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
             }
 
             td {
@@ -45,7 +45,7 @@
                 text-align: center;
                 padding: 12px;
                 font-size: 16px;
-
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
             }
 
         </style>
@@ -85,7 +85,7 @@
                     <%= rs.getString("bookname") %>
                 </td>
                 <td>
-                    <%= rs.getInt("price") %>
+                    <%= rs.getInt("price") %>원
                 </td>
             </tr>
             <%
